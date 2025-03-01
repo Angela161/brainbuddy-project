@@ -1,62 +1,95 @@
-/* General Page Styling */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('images/background.png.webp'); /* Use your saved background */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    text-align: center;
-    color: #2C3E50; /* Deep Navy Blue */
+    background-image: url(images/therapy.png.webp);
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
-/* Header Styling */
 header {
+    color:#2C3E50;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-    margin: 20px auto;
-    width: 80%;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin-top: 5px;
+    font-size: 1.2em;
 }
 
 /* Therapy Container */
 .therapy-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 20px;
+    max-width: 900px;
+    margin: 50px auto;
+    justify-items: center;
 }
 
-/* Therapy Card Styling */
-.therapy-card {
-    background: rgba(255, 255, 255, 0.9); /* Soft white with transparency */
-    border-radius: 12px;
+/* Therapy Cards */
+.therapy-card, .ai-chatbot {
+
+    border-radius: 10px;
     padding: 20px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
 }
 
-.therapy-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+.therapy-card:hover, .ai-chatbot:hover {
+    transform: translateY(-5px);
 }
 
-/* Image Styling */
-.therapy-card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+.therapy-card img, .ai-chatbot img {
+    width: 100px;
+    height: 100px;
 }
 
-/* Mobile Responsiveness */
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color:#2C3E50;
+}
+
+/* Positioning Therapy Options */
+.sound-therapy {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.breathing-meditation {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.ai-chatbot {
+    grid-column: 2;
+    grid-row: 2;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.journaling {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.therapist {
+    grid-column: 2;
+    grid-row: 3;
+}
+
 @media (max-width: 768px) {
     .therapy-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
-
