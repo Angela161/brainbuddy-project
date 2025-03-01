@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBuddy - Login</title>
-    <link rel="stylesheet" href="log in.css">
+    <link rel="stylesheet" href="log in.css"> 
 </head>
 <body>
 
     <div class="login-container">
         <h3>Login to BrainBuddy</h3>
-        <form action="#" method="POST">
+        <form id="login-form" method="POST">
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -21,8 +21,61 @@
             </div>
             <button type="submit">Login</button>
         </form>
-        <p class="register-link">Don't have an account? <a href="#">Sign up</a></p>
+        <p class="register-link">Don't have an account? <a href="#" onclick="showSignUp()">Sign up</a></p>
     </div>
+
+    <!-- Dark background overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hidden Sign-Up Form (Popup) -->
+    <div id="signup-form" class="signup-container">
+        <h3>Create a New Account</h3>
+        <form id="signup-form-element" method="POST">
+            <div class="input-group">
+                <label for="new-email">Email</label>
+                <input type="email" id="new-email" name="new-email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="new-password">Password</label>
+                <input type="password" id="new-password" name="new-password" placeholder="Create a password" required>
+               
+            </div>
+            <div class="button-group">
+                <button type="submit">Sign Up</button>
+                <button onclick="hideSignUp()">Cancel</button>
+            </div>
+            
+                
+
+    <script>
+        // Show Sign-Up Form as a Pop-up
+        function showSignUp() {
+            document.getElementById("signup-form").style.display = "block";
+            document.getElementById("overlay").style.display = "block"; // Darken background
+        }
+
+        // Hide Sign-Up Form
+        function hideSignUp() {
+            document.getElementById("signup-form").style.display = "none";
+            document.getElementById("overlay").style.display = "none"; // Remove dark background
+        }
+
+        // Login Form Submission (Redirect to Therapy Page)
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form from refreshing
+            setTimeout(() => {
+                window.location.href = "therapy.html"; // Redirect to therapy page
+            }, 3000); // Delay for 3 seconds
+        });
+
+        // Sign-Up Form Submission (Redirect to Therapy Page)
+        document.getElementById("signup-form-element").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form from refreshing
+            setTimeout(() => {
+                window.location.href = "therapy.html"; // Redirect to therapy page
+            }, 3000); // Delay for 3 seconds
+        });
+    </script>
 
 </body>
 </html>
