@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBuddy - Mental Health App</title>
     <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS -->
+<script>
+        // Redirect to login.html after 5 seconds
+        setTimeout(function() {
+            window.location.href = "log in .html";
+        }, 5000); 
+    </script>
 </head>
 <body>
     <div class="overlay">
