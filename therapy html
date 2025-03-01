@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Options - BrainBuddy</title>
+    <link rel="stylesheet" href="therapy.css"> <!-- Linking external CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>Explore Our Therapy Options</h1>
+        <p>Choose the therapy that best supports your mental well-being.</p>
+    </header>
+
+    <div class="therapy-container">
+        <!-- Sound Therapy -->
+        <div class="therapy-card">
+            <img src="images/sound.png.webp" alt="Sound Therapy">
+            <h2>Sound Therapy</h2>
+            <p>Relax with calming sounds and binaural beats designed to ease stress and anxiety.</p>
+        </div>
+
+        <!-- Breathing & Meditation -->
+        <div class="therapy-card">
+            <img src="images/breathing.png.webp" alt="Breathing & Meditation">
+            <h2>Breathing & Meditation</h2>
+            <p>Practice guided breathing exercises and mindfulness techniques to improve focus and relaxation.</p>
+        </div>
+
+        <!-- Guided Journaling -->
+        <div class="therapy-card">
+            <img src="images/journalling.png.webp" alt="Guided Journaling">
+            <h2>Guided Journaling</h2>
+            <p>Express your thoughts and emotions in a structured way with our journaling prompts.</p>
+        </div>
+
+        <!-- Therapist -->
+        <div class="therapy-card">
+            <img src="images/therapist.png.webp" alt="Therapist">
+            <h2>Connect with a Therapist</h2>
+            <p>Find professional mental health support and book sessions with licensed therapists.</p>
+        </div>
+    </div>
+
+</body>
+</html>
