@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBuddy - Mental Health App</title>
     <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS -->
-<script>
-        // Redirect to login.html after 5 seconds
-        setTimeout(function() {
-            window.location.href = "log in .html";
-        }, 5000); 
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                alert("BrainBuddy is designed for mild to moderate mental health support.\nFor severe conditions, please consult a licensed therapist.");
+
+                // Redirect to login.html after 5 seconds
+                setTimeout(function() {
+                    window.location.href = "login.html"; // Ensure file name is correct
+                }, 5000);
+            }, 1000); // Delays pop-up by 1 second to ensure page is fully loaded
+        });
     </script>
 </head>
 <body>
     <div class="overlay">
         <h4 class="welcome-text">Welcome to BrainBuddy</h4> <!-- Applied animation class -->
-        
-        
-       
     </div>
 </body>
 </html>
