@@ -7,16 +7,9 @@
     <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS -->
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(function() {
-                alert("BrainBuddy is designed for mild to moderate mental health support.\nFor severe conditions, please consult a licensed therapist.");
-
-                // Redirect to login.html after 5 seconds
-                setTimeout(function() {
-                    window.location.href = "login.html"; // Ensure file name is correct
-                }, 3000);
-            }, 1000); // Delays pop-up by 1 second to ensure page is fully loaded
-        });
+        setTimeout(function() {
+            window.location.href = "warning.html"; // First, go to warning page
+        }, 3000); // 3-second delay
     </script>
 </head>
 <body>
