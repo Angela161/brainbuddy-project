@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing & Meditation - BrainBuddy</title>
+    <link rel="stylesheet" href="therapy.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedBackground = localStorage.getItem("therapyBackground");
+            if (savedBackground) {
+                document.body.classList.add(savedBackground);
+                localStorage.removeItem("therapyBackground");
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h2>Breathing & Meditation</h2>
+        
+    </header>
+
+    <div class="therapy-content">
+        
+        <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "therapy.html";
+        }
+    </script>
+
+</body>
+</html>
