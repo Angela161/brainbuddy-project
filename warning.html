@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning - BrainBuddy</title>
+    <link rel="stylesheet" href="warning.css"> <!-- Link to separate CSS -->
+    
+    <script>
+        setTimeout(function() {
+            window.location.href = "login.html"; // Redirect to login after 5 sec
+        }, 5000); // 5-second delay
+    </script>
+</head>
+<body>
+
+    <div class="warning-container">
+        <h1 class="warning-header">⚠ Important Notice ⚠</h1>
+        <p class="warning-text">
+            BrainBuddy is designed for **mild to moderate mental health support**.  
+            If you are experiencing a crisis or severe distress, please seek help from a **licensed therapist** or emergency services.
+        </p>
+        <button class="continue-button" onclick="proceedToLogin()">Continue to Login</button>
+    </div>
+
+    <script>
+        function proceedToLogin() {
+            window.location.href = "login.html"; // Redirects immediately on click
+        }
+    </script>
+
+</body>
+</html>
