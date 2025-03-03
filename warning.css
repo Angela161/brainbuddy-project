@@ -52,10 +52,28 @@ body {
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
+/* go back button */
+ .go-back-btn {
+    background:#FF9800;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+ }
 
 .continue-button:hover {
     background: #E65100; /* Darker orange */
 }
+.go-back-btn:hover {
+    background: #E65100; /* Darker orange */
+    
+}
+
 
 
 
