@@ -20,6 +20,7 @@ h3 {
 }
 
 
+
 /* Therapy Container */
 .therapy-container {
     display: grid;
@@ -53,36 +54,41 @@ h3 {
 }
 
 h2 {
-   font-size: 3rem;
+    font-size: 3rem;
     font-weight: 600;
     margin-top: 10px;
     color:#2C3E50;
 }
+
 /* Positioning Therapy Options */
 .sound-therapy {
     grid-column: 2;
     grid-row: 1;
+    background:linear-gradient(135deg,#A8E6CF , #D4FC79);
 }
 
 .breathing-meditation {
     grid-column: 1;
     grid-row: 2;
+    background:linear-gradient(135deg, #A8E6CF, #D4FC79) ;
 }
 
 .ai-chatbot {
     grid-column: 2;
     grid-row: 2;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
 }
 
 .journaling {
     grid-column: 3;
     grid-row: 2;
+    background:linear-gradient(135deg, #FFD3A5, #FD6585);
 }
 
 .therapist {
     grid-column: 2;
     grid-row: 3;
+    background:linear-gradient(135deg, #FAD0C4, #FF9A9E);
 }
 
 @media (max-width: 768px) {
@@ -91,4 +97,46 @@ h2 {
         flex-direction: column;
         align-items: center;
     }
+}
+.go-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background:purple; /* Purple gradient */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.go-back-btn:hover {
+    background: #2575fc; /* Blue gradient */
+}
+
+
+
+
+
+/* Background Images */
+.sound-therapy-bg {
+    background-image: url("images/sound therapy bg.png.webp");
+}
+
+.breathing-meditation-bg {
+    background-image: url("images/breathing\ bg.png.webp");
+}
+
+.ai-chatbot-bg {
+    background-image: url("images/chatbot\ bg.png..webp");
+}
+
+.journaling-bg {
+    background-image: url("images/journaling bg.png.webp");
+}
+
+.therapist-bg {
+    background-image: url("images/connect\ with\ therapist.png.webp ");
 }
