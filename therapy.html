@@ -5,54 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Therapy Options - BrainBuddy</title>
     <link rel="stylesheet" href="therapy.css"> <!-- Linking external CSS -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedBackground = localStorage.getItem("therapyBackground");
+            if (savedBackground) {
+                document.body.classList.add(savedBackground);
+                localStorage.removeItem("therapyBackground"); // Remove after applying
+            }
+        });
+
+        function redirectTo(page, backgroundClass) {
+            localStorage.setItem("therapyBackground", backgroundClass);
+            window.location.href = page + ".html";
+        }
+    </script>
 </head>
 <body>
 
     <header>
-        <h1>Explore Our Therapy Options</h1>
-        
+        <h3>Explore Our Therapy Options</h3>
+
     </header>
 
     <div class="therapy-container">
-        <!-- Sound Therapy (Top) -->
-        <div class="therapy-card sound-therapy" onclick="redirectTo('sound-therapy')">
+        <!-- Sound Therapy -->
+        <div class="therapy-card sound-therapy" onclick="redirectTo('sound therapy', 'sound-therapy-bg')">
             <img src="images/sound.png.webp" alt="Sound Therapy">
             <h2>Sound Therapy</h2>
         </div>
 
-        <!-- Breathing & Meditation (Left) -->
-        <div class="therapy-card breathing-meditation" onclick="redirectTo('breathing-meditation')">
+        <!-- Breathing & Meditation -->
+        <div class="therapy-card breathing-meditation" onclick="redirectTo('breathing & meditation', 'breathing-meditation-bg')">
             <img src="images/breathing.png.webp" alt="Breathing & Meditation">
             <h2>Breathing & Meditation</h2>
         </div>
 
-        <!-- AI Chatbot (Center) -->
-        <div class="ai-chatbot" onclick="redirectTo('chatbot')">
+        <!-- AI Chatbot (Fixed) -->
+        <div class="therapy-card ai-chatbot" onclick="redirectTo('chatbot', 'ai-chatbot-bg')">
             <img src="images/chatbot.png.webp" alt="AI Chatbot">
             <h2>AI Chatbot</h2>
-    
         </div>
 
-        <!-- Guided Journaling (Right) -->
-        <div class="therapy-card journaling" onclick="redirectTo('journaling')">
+        <!-- Guided Journaling -->
+        <div class="therapy-card journaling" onclick="redirectTo('journaling', 'journaling-bg')">
             <img src="images/journalling.png.webp" alt="Guided Journaling">
             <h2>Guided Journaling</h2>
         </div>
 
-        <!-- Therapist (Bottom) -->
-        <div class="therapy-card therapist" onclick="redirectTo('therapist')">
+        <!-- Therapist -->
+        <div class="therapy-card therapist" onclick="redirectTo('therapist', 'therapist-bg')">
             <img src="images/therapist.png.webp" alt="Therapist">
             <h2>Connect with a Therapist</h2>
         </div>
     </div>
-
+    <button class="go-back-button" onclick="goBack()"> ⬅ Go Back</button>
     <script>
-        function redirectTo(option) {
-            window.location.href = option + ".html"; // Redirects to respective pages
+        function goBack() {
+            window.location.href = "login.html"; // Redirects immediately on click
         }
     </script>
 
+        
+
+
 </body>
 </html>
-
-
