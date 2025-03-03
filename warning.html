@@ -11,15 +11,21 @@
     <div class="warning-container">
         <h1 class="warning-header">⚠ Important Notice ⚠</h1>
         <p class="warning-text">
-            BrainBuddy is designed for **mild to moderate mental health support**.  
-            If you are experiencing a crisis or severe distress, please seek help from a **licensed therapist** or emergency services.
+            BrainBuddy is designed for mild to moderate mental health support.  
+            If you are experiencing a crisis or severe distress, please seek help from a licensed therapist or emergency services.
         </p>
         <button class="continue-button" onclick="proceedToLogin()">Continue to Login</button>
+        <button class="go-back-btn" onclick="goBack()"> Go Back</button>
     </div>
 
     <script>
         function proceedToLogin() {
             window.location.href = "login.html"; // Redirects immediately on click
+        }
+    </script>
+    <script>
+        function goBack() {
+            window.location.href = "index.html"; // Redirects immediately on click
         }
     </script>
 
