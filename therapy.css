@@ -62,33 +62,33 @@ h2 {
 
 /* Positioning Therapy Options */
 .sound-therapy {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
-    background:linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
 }
 
 .breathing-meditation {
-    grid-column: 1;
-    grid-row: 2;
-    background:linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    grid-column: 3;
+    grid-row: 1;
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
 }
 
 .ai-chatbot {
     grid-column: 2;
     grid-row: 2;
-    background:linear-gradient(135deg,#A8E6CF , #D4FC79)
+    background: linear-gradient(135deg, #A8E6CF, #D4FC79);
 }
 
 .journaling {
-    grid-column: 3;
-    grid-row: 2;
-    background:linear-gradient(135deg, #FFD3A5, #FD6585);
+    grid-column: 1;
+    grid-row: 3;
+    background: linear-gradient(135deg, #FFD3A5, #FD6585);
 }
 
 .therapist {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 3;
-    background:linear-gradient(135deg, #FAD0C4, #FF9A9E);
+    background: linear-gradient(135deg, #FAD0C4, #FF9A9E);
 }
 
 @media (max-width: 768px) {
