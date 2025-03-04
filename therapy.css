@@ -13,52 +13,56 @@ header {
 }
 
 h3 {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 5rem;
+    font-weight:700;
     margin: 0;
     color: #2C3E50;
 }
-
-
-
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
 /* Therapy Container */
 .therapy-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 900px;
-    margin: 50px auto;
+    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns */
+    grid-template-rows: repeat(2, 1fr); /* Only 2 rows to fit all options */
+    gap: 10px;  /* Reduce gap for compact spacing */
+    max-width: 900px;  /* Slightly smaller width */
+    margin: 20px auto;  /* Reduce margin to bring content up */
     justify-items: center;
 }
 
 /* Therapy Cards */
 .therapy-card, .ai-chatbot {
-
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* Slightly reduce roundness */
+    padding: 15px; /* Reduce padding */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
     text-align: center;
-    width: 250px;
+    width: 300px; /* Decrease width */
+    height: 300px; /* Decrease height */
+    position: relative;
+    background: white;
 }
 
-.therapy-card:hover, .ai-chatbot:hover {
-    transform: translateY(-5px);
-}
-
+/* Adjust images inside the therapy cards */
 .therapy-card img, .ai-chatbot img {
-    width: 100px;
+    width: 100px; /* Adjusted image size */
     height: 100px;
+   
 }
 
-h2 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-top: 10px;
-    color:#2C3E50;
+/* Hover Effect */
+.therapy-card:hover, .ai-chatbot:hover {
+    transform: translateY(-3px);
 }
+
+
+
+
 
 /* Positioning Therapy Options */
 .sound-therapy {
@@ -91,13 +95,28 @@ h2 {
     background: linear-gradient(135deg, #FAD0C4, #FF9A9E);
 }
 
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .therapy-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: repeat(2, 1fr); /* Maintain two columns on tablets */
+        grid-template-rows: repeat(2, 1fr);
+        gap: 8px;
+        height: auto;
+    }
+
+    .therapy-card, .ai-chatbot {
+        width: 120px; /* Further reduce for smaller screens */
+        height: 120px;
+        font-size: 12px;
+    }
+
+    .therapy-card img, .ai-chatbot img {
+        width: 50px;
+        height: 50px;
     }
 }
+
 .go-back-btn {
     position: fixed;
     bottom: 20px;
@@ -111,7 +130,6 @@ h2 {
     cursor: pointer;
     transition:background 0.3s ease-in-out;
 }
-
 .go-back-btn:hover {
     background: #2575fc; /* Blue gradient */
 }
@@ -128,7 +146,6 @@ h2 {
     cursor: pointer;
     transition:background 0.3s ease-in-out;
 }
-
 .go-back-button:hover {
     background: #2575fc; /* Blue gradient */
 }
