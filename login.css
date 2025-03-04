@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('images/login.webp') no-repeat center center fixed;
+    background: url('images/log\ in\ .\ png.webp') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -11,6 +11,31 @@ body {
     height: 100vh;
     color: #2C3E50;
 }
+.go-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: purple; /* Purple gradient */
+    color: white;
+    border: none;
+    padding: 10px 15px;  /* Adjust padding */
+    font-size: 14px;     /* Smaller font size */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    width: auto;   /* Prevents it from expanding */
+    min-width: 100px;  /* Ensures a reasonable size */
+    max-width: 200px;  /* Prevents full-width stretching */
+    text-align: center;
+    display: inline-block;  /* Ensures proper button sizing */
+}
+
+.go-back-btn:hover {
+    background: #2575fc; /* Blue gradient */
+}
+
+
+
 
 /* Login Container */
 .login-container {
