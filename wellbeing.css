@@ -1,0 +1,33 @@
+/* Background Styling */
+body {
+    background-image: url('images/background.png.webp'); /* Ensure correct path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Gill sans ultra bold';
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:#2C3E50;
+    
+}
+
+
+h1 {
+    font-size: 48px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center align */
+    color: #2C3E50;
+
+}
+
+p {
+    font-size: 20px; /* Increase paragraph size */
+    font-weight: 600; /* Semi-bold */
+    text-align: center; /* Center align */
+    color: #2C3E50;
+    
+}
