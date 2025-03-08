@@ -7,33 +7,62 @@
     <link rel="stylesheet" href="therapy.css">
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let savedBackground = localStorage.getItem("therapyBackground");
-            if (savedBackground) {
-                document.body.classList.add(savedBackground);
-                localStorage.removeItem("therapyBackground");
-            }
-        });
+       document.addEventListener("DOMContentLoaded", function () {
+    let savedBackground = localStorage.getItem("therapyBackground");
+
+    // Only apply the background if it is set and not the main page
+    if (savedBackground && !window.location.href.includes("therapy.html")) {
+        document.body.classList.add(savedBackground);
+    } else {
+        // Clear background when returning to the main therapy page
+        localStorage.removeItem("therapyBackground");
+    }
+});
+
+function redirectTo(page, bgClass) {
+    localStorage.setItem("therapyBackground", bgClass);
+    window.location.href = page + ".html"; 
+}
+
     </script>
+    <style>
+        /* Fallback for background in case JavaScript is disabled */
+        body {
+            background-image: url('images/connect\ with\ therapist.png.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
+  
+
 <body>
+    <h3>Connect with a Therapist</h3>
 
-    <header>
-        <h2>Connect with a Therapist</h2>
-        
-    </header>
+    <div class="therapist-container">
+        <!-- Peer Group & Community Helpline -->
+        <div class="therapist-card peer-group" onclick="redirectTo('peer-group', 'peer-group-bg')">
+            <img src="images/peer.png.webp" alt="Peer Group">
+            <h1>Peer Group & Community Helpline</h1>
+        </div>
 
-    <div class="therapy-content">
-        
-
-        <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+        <!-- Professional Therapist -->
+        <div class="therapist-card professional-therapist" onclick="redirectTo('professional-therapist', 'professional-therapist-bg')">
+            <img src="images/therapist2.webp" alt="Professional Therapist">
+            <h1>Professional Therapist</h1>
+        </div>
     </div>
 
+    <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
     <script>
         function goBack() {
-            window.location.href = "therapy.html";
+            window.location.href="therapy.html";
         }
+
     </script>
 
 </body>
 </html>
+
+
