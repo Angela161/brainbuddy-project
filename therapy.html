@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="therapy.css"> <!-- Linking external CSS -->
     
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let savedBackground = localStorage.getItem("therapyBackground");
-            if (savedBackground) {
-                document.body.classList.add(savedBackground);
-                localStorage.removeItem("therapyBackground"); // Remove after applying
-            }
-        });
-
         function redirectTo(page, backgroundClass) {
             localStorage.setItem("therapyBackground", backgroundClass);
             window.location.href = page + ".html";
         }
     </script>
+    <style>
+        /* Fallback for background in case JavaScript is disabled */
+        body {
+            background-image: url('images/therapy.png.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
 
@@ -33,6 +34,7 @@
         <div class="therapy-card sound-therapy" onclick="redirectTo('sound therapy', 'sound-therapy-bg')">
             <img src="images/sound.png.webp" alt="Sound Therapy">
             <h2>Sound Therapy</h2>
+            
         </div>
 
         <!-- Breathing & Meditation -->
