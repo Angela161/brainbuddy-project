@@ -8,8 +8,13 @@ body {
 }
 
 header {
-    color:#2C3E50;
+    color:#123252;
     padding: 20px;
+}
+h4{
+    color: #e9ecef;
+    font-size: 4rem;
+    font-weight: 700;
 }
 
 h3 {
@@ -19,8 +24,13 @@ h3 {
     color: #2C3E50;
 }
 h2 {
+    color:#0a2540;
     font-size: 3rem;
     font-weight: 700;
+}
+h1{
+     font-size:2rem ;
+     font-weight: 100;
 }
 /* Therapy Container */
 .therapy-container {
@@ -29,7 +39,7 @@ h2 {
     grid-template-rows: repeat(2, 1fr); /* Only 2 rows to fit all options */
     gap: 10px;  /* Reduce gap for compact spacing */
     max-width: 900px;  /* Slightly smaller width */
-    margin: 20px auto;  /* Reduce margin to bring content up */
+    margin: 5px auto;  /* Reduce margin to bring content up */
     justify-items: center;
 }
 
@@ -68,19 +78,21 @@ h2 {
 .sound-therapy {
     grid-column: 1;
     grid-row: 1;
-    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    background: linear-gradient(135deg, #D4A5E0, #86A8E7);
+
 }
 
 .breathing-meditation {
     grid-column: 3;
     grid-row: 1;
-    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    background: linear-gradient(135deg, #D4A5E0, #86A8E7);
+
 }
 
 .ai-chatbot {
     grid-column: 2;
     grid-row: 2;
-    background: linear-gradient(135deg, #A8E6CF, #D4FC79);
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
 }
 
 .journaling {
@@ -172,4 +184,52 @@ h2 {
 
 .therapist-bg {
     background-image: url("images/connect\ with\ therapist.png.webp ");
+}
+.therapist-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(1, 1fr); /* One row */
+    gap: 90px;  /* Increased gap for more spacing */
+    max-width: 900px;  
+    margin: 80px auto;  /* Increased top margin to push boxes lower */
+    justify-items: center;
+}
+
+/* Therapy Cards */
+.therapist-card {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px; 
+    padding: 10px; /* Reduced padding */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    width: 280px; /* Reduced width */
+    height: 280px; /* Reduced height */
+    position: relative;
+    background: linear-gradient(135deg, #F5E8C7, #A1C4FD);
+
+
+
+
+
+}
+
+/* Adjust images inside the therapy cards */
+.therapist-card img {
+    width: 100px; /* Smaller images */
+    height: 100px;
+}
+
+/* Background styles for different pages */
+.peer-group-bg {
+    background-image: url("images/peer\ bg.png.webp");
+}
+
+.professional-therapist-bg {
+    background-image: url("images/pro.therapist\ bg.png.webp");
+}
+
+.professional-therapist-bg {
+    background-image: url("images/pro.therapist\ bg.png.webp");
 }
