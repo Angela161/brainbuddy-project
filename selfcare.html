@@ -66,19 +66,23 @@
     </div>
 
     <!-- 🔹 Image Quote Carousel -->
-    <div class="container image-carousel-container">
-        <h2>Inspirational Self-Care Quotes</h2>
-        <div class="carousel-container">
-            <button class="prev" onclick="prevImage()">&#10094;</button>
-            <div class="image-carousel-slide" id="image-carousel">
-                <img src="images/quote.png.jpg" alt="Self-Care Quote 1">
-                <img src="images/quote1.png.webp" alt="Self-Care Quote 2">
-                <img src="images/quote2.png.webp" alt="Self-Care Quote 3">
-                <img src="images/quote3.png.webp" alt="Self-Care Quote 4">
-            </div>
-            <button class="next" onclick="nextImage()">&#10095;</button>
-        </div>
+<h2>Inspirational Self-Care Quotes</h2>
+<div class="container image-carousel-container">
+    <button class="image-prev" onclick="prevImage()">&#10094;</button>
+    <div class="image-carousel-slide" id="image-carousel">
+        <div class="image-slide"><img src="images/quote.png.jpg" alt="Self-Care Quote 1"></div>
+        <div class="image-slide"><img src="images/quote1.png.webp" alt="Self-Care Quote 2"></div>
+        <div class="image-slide"><img src="images/quote2.png.webp" alt="Self-Care Quote 3"></div>
+        <div class="image-slide"><img src="images/quote3.png.webp" alt="Self-Care Quote 4"></div>
     </div>
+    <button class="image-next" onclick="nextImage()">&#10095;</button>
+
+</div>
+ <!-- Redirect Button -->
+ <div style="text-align: center; margin-top: 20px;">
+    <button id="challenges-btn" class="challenges-button">Go to Challenges</button>
+</div>
+
 
     <script>
         let tipIndex = 0;
@@ -87,47 +91,50 @@ const slides = document.querySelectorAll(".slide");
 const totalTips = slides.length;
 
 function nextTip() {
-    if (tipIndex < totalTips - 1) {
-        tipIndex++;
-    } else {
-        tipIndex = 0; // Loop back to the first slide
-    }
+    tipIndex = (tipIndex + 1) % totalTips; // Loop back to first slide automatically
     updateTipCarousel();
 }
 
 function prevTip() {
-    if (tipIndex > 0) {
-        tipIndex--;
-    } else {
-        tipIndex = totalTips - 1; // Loop to the last slide
-    }
+    tipIndex = (tipIndex - 1 + totalTips) % totalTips; // Loop to last slide when at the start
     updateTipCarousel();
 }
 
 function updateTipCarousel() {
     tipCarousel.style.transition = "transform 0.6s ease-in-out"; // Smooth transition
-    tipCarousel.style.transform = `translateX(-${tipIndex * 100}%)`;
+    tipCarousel.style.transform = `translateX(-${tipIndex * 100}%)`; // Corrected interpolation
 }
 
-
-        // 🔹 Image Quote Carousel
         let imageIndex = 0;
-        const imageCarousel = document.getElementById("image-carousel");
-        const totalImages = document.querySelectorAll(".image-carousel-slide img").length;
+const imageCarousel = document.getElementById("image-carousel");
+const totalImages = document.querySelectorAll(".image-slide").length;
 
-        function nextImage() {
-            imageIndex = (imageIndex + 1) % totalImages;
-            updateImageCarousel();
-        }
+function nextImage() {
+    if (imageIndex < totalImages - 1) {
+        imageIndex++;
+    } else {
+        imageIndex = 0; // Loop back to first image
+    }
+    updateImageCarousel();
+}
 
-        function prevImage() {
-            imageIndex = (imageIndex - 1 + totalImages) % totalImages;
-            updateImageCarousel();
-        }
+function prevImage() {
+    if (imageIndex > 0) {
+        imageIndex--;
+    } else {
+        imageIndex = totalImages - 1; // Loop to last image
+    }
+    updateImageCarousel();
+}
 
-        function updateImageCarousel() {
-            imageCarousel.style.transform = `translateX(-${imageIndex * 100}%)`;
-        }
+function updateImageCarousel() {
+    const translateValue = -imageIndex * 100;
+    imageCarousel.style.transform = `translateX(${translateValue}%)`;
+}
+document.getElementById("challenges-btn").addEventListener("click", function() {
+    window.location.href = "challenges.html"; // Redirect to challenges page
+});
+
     </script>
 
 </body>
