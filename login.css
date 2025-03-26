@@ -1,6 +1,6 @@
 /* General page styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     background: url('images/login.png.webp') no-repeat center center fixed;
@@ -11,15 +11,28 @@ body {
     height: 100vh;
     color: #2C3E50;
 }
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;  
+}
+label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem; 
+}
 .go-back-btn {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background: purple; /* Purple gradient */
+    background:linear-gradient(135deg, #6a207c, #1053ce); /* Purple gradient */
     color: white;
     border: none;
     padding: 10px 15px;  /* Adjust padding */
     font-size: 14px;     /* Smaller font size */
+    font-family: 'Times New Roman', Times, serif;
     border-radius: 5px;  /* Rounded corners */
     cursor: pointer;
     transition: background 0.3s ease-in-out;
