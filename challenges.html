@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Love Challenge</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url("images/challenges\ bg.png.webp");
+            background-size: cover;  /* Enlarges while maintaining aspect ratio */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevens tiling */
+            background-attachment: fixed;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            height: 100vh; /* Ensures full viewport height */
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+        }
+        .challenge-container {
+            width: 80%; /* Makes it take 80% of the screen width */
+           max-width: 450px; /* Increases the max width */
+           min-height: 300px; /* Sets a minimum height */
+           background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+           padding: 20px; /* Increased padding for a larger appearance */
+           border-radius: 20px; /* Softer rounded edges */
+           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+        #challenge-text {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2C3E50;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #2C3E50;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #complete-btn {
+            background: #ff6f61;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #complete-btn:hover {
+            background: #ff3d2e;
+        }
+        #progress {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+.go-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: purple; /* Purple gradient */
+    color: white;
+    border: none;
+    padding: 10px 15px;  /* Adjust padding */
+    font-size: 14px;     /* Smaller font size */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    width: auto;   /* Prevents it from expanding */
+    min-width: 100px;  /* Ensures a reasonable size */
+    max-width: 200px;  /* Prevents full-width stretching */
+    text-align: center;
+    display: inline-block;  /* Ensures proper button sizing */
+}
+
+.go-back-btn:hover {
+    background: #2575fc; /* Blue gradient */
+}
+
+    </style>
+</head>
+<body>
+    <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+    <div class="challenge-container">
+        <h2>🎯 Self-Love Challenge</h2>
+        <p id="challenge-text">Loading challenge...</p>
+        <button id="complete-btn">✅ Mark as Complete</button>
+        <p id="progress">Progress: <span id="progress-count">0</span>/30 days</p>
+    </div>
+
+    <script>
+        // 🔹 List of 30 Challenges
+        const challenges = [
+            "🌞 Start your day with 5 deep breaths and a big stretch!",
+            "📖 Read a chapter from a book that inspires you!",
+            "💧 Drink at least 8 glasses of water today!",
+            "🎵 Listen to a song that lifts your mood!",
+            "💌 Write down 3 things you're grateful for.",
+            "🚶‍♂️ Take a short walk and enjoy the fresh air!",
+            "🍎 Eat a healthy meal that nourishes your body!",
+            "🎨 Draw, paint, or create something today!",
+            "🤗 Give yourself a genuine compliment!",
+            "🧘‍♀️ Meditate for at least 5 minutes today!",
+            "📅 Plan one small goal for the week ahead!",
+            "🛏️ Go to bed 30 minutes earlier than usual!",
+            "💖 Do a random act of kindness for someone!",
+            "📜 Write a letter to your future self!",
+            "📷 Capture a happy moment with a photo!",
+            "📞 Call or text a loved one just to say hi!",
+            "🍵 Make yourself a calming tea or coffee and enjoy it mindfully!",
+            "🕺 Dance like nobody's watching for 5 minutes!",
+            "📚 Learn one new thing today—watch a video or read something!",
+            "🌙 Step outside and look at the stars for a moment of peace!",
+            "🙌 Stretch your body for at least 10 minutes!",
+            "🎯 Set one positive affirmation and repeat it all day!",
+            "🚿 Take a warm, relaxing shower or bath!",
+            "🍫 Treat yourself to something small but enjoyable!",
+            "🎭 Watch or read something that makes you laugh!",
+            "💌 Write down one positive thing about yourself!",
+            "🎶 Sing along to your favorite song out loud!",
+            "🐾 Spend time with a pet or in nature!",
+            "🍽️ Eat a meal without distractions—just enjoy the taste!",
+            "🎉 Celebrate completing 30 days of self-love challenges!"
+        ];
+
+        // 🔹 Get Elements
+        const challengeText = document.getElementById("challenge-text");
+        const completeBtn = document.getElementById("complete-btn");
+        const progressCount = document.getElementById("progress-count");
+
+        // 🔹 Load Progress & Last Completed Date
+        let progress = parseInt(localStorage.getItem("progress")) || 0;
+        let lastCompletedDate = localStorage.getItem("lastCompletedDate");
+
+        // 📌 Function to Reset Progress at the Start of Each Month
+        function checkForNewMonth() {
+            const today = new Date();
+            const todayDateString = today.toISOString().split("T")[0]; // YYYY-MM-DD format
+            const lastDate = lastCompletedDate || todayDateString;
+            
+            const todayMonth = today.getMonth(); // 0 = Jan, 1 = Feb, ..., 11 = Dec
+            const lastCompletedMonth = new Date(lastDate).getMonth();
+
+            // If it's a new month, reset progress
+            if (todayMonth !== lastCompletedMonth) {
+                progress = 0;
+                localStorage.setItem("progress", 0);
+            }
+        }
+
+        checkForNewMonth(); // Ensure reset if needed
+        updateProgress(); // Update progress UI
+
+        // 📌 Function to Load the Challenge for the Current Day
+        function loadChallenge() {
+            if (progress >= 30) {
+                window.location.href = "congratulations.html"; // Redirect to completion page
+            } else {
+                challengeText.innerText = challenges[progress % challenges.length]; // Loop after 30 days
+            }
+        }
+
+        // 📌 Function to Mark Challenge as Complete
+        completeBtn.addEventListener("click", function () {
+            progress++;
+            lastCompletedDate = new Date().toISOString().split("T")[0]; // Save today’s date
+            localStorage.setItem("progress", progress);
+            localStorage.setItem("lastCompletedDate", lastCompletedDate);
+            updateProgress();
+            loadChallenge(); // Load the next challenge
+        });
+
+        // 📌 Function to Update Progress UI
+        function updateProgress() {
+            progressCount.innerText = (progress % challenges.length) + 1; // Show 1-30
+        }
+
+        // 🔹 Load Challenge when Page Loads
+        document.addEventListener("DOMContentLoaded", loadChallenge);
+        function goBack() {
+            window.location.href="selfcare.html";
+        }
+    </script>
+</body>
+</html>
