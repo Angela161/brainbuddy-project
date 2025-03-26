@@ -7,59 +7,84 @@
     <link rel="stylesheet" href="selfcare.css">
 </head>
 <body>
-
+    <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
     <!-- 🔹 Self-Care Tips Carousel -->
     <h1>Self-Care Tips</h1>
     <div class="carousel-container">
         <button class="prev" onclick="prevTip()">&#10094;</button>
         <div class="carousel-slide" id="tip-carousel">
             <div class="slide">
-              <p style="color:#F5DEB3;">Embrace Your Own Story: Just like Naruto,turn your struggles into strength!</p>
+              <p style="color:white;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                Embrace Your Own Story: Just like Naruto,turn your struggles into strength!
+            </p>
             </div>
             <div class="slide">
-            <p style="color:#F5DEB3;">Rest Like a Cat: Cats don’t feel guilty about napping—neither should you!</p>
+            <p style= "color: #F5DEB3; background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+            Rest Like a Cat: Cats don’t feel guilty about napping—neither should you!
+           </p>
             </div>
             <div class="slide">
-            <p style="color:#F5DEB3;">Grow at Your Own Pace: A Bonsai tree takes years to shape—your progress matters.</p>
-            </div>
-            <div class="slide"> 
-            <p style="color:#F5DEB3;">Find Your Nakama: Like Luffy, surround yourself with people who uplift you.</p>
-           </div>
-            <div class="slide">
-                <p style="color:#F5DEB3;">Heal Like Nature: After heavy rain, flowers bloom—your pain leads to growth.</p>
+            <p style="color:white;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+            Grow at Your Own Pace: A Bonsai tree takes years to shape—your progress matters.
+           </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Fuel Yourself: Like Chihiro in Spirited Away, nourish yourself to regain strength.</p>
+                <p style="color:white; text-shadow: 2px 2px 4px rgba(1, 1, 1, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability *">
+                    Find Your Nakama: Like Luffy, surround yourself with people who uplift you.
+                </p>
+            </div>
+            
+            <div class="slide">
+                <p style="color:white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                    Heal Like Nature: After heavy rain, flowers bloom—your pain leads to growth.
+                </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Stand Tall Like a Mountain – No matter what storms come your way, stand firm in your beliefs. </p>
+                <p style="color: #F5DEB3; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                Fuel Yourself: Like Chihiro in Spirited Away, nourish yourself to regain strength.
+            </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Train Like Goku – Growth comes from consistent effort, even when it’s tough! </p>
+                <p style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                Stand Tall Like a Mountain – No matter what storms come your way, stand firm in your beliefs. 
+            </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Rise Like the Sun – No matter how dark the night gets, the sun always rises. Keep shining! </p>
+                <p style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                Train Like Goku – Growth comes from consistent effort, even when it’s tough! 
+            </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Believe in Yourself Like Luffy – If you have a dream, chase it with everything you’ve got </p>
+                <p style="color:#FFF8E7;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */ ">
+                    Rise Like the Sun – No matter how dark the night gets, the sun always rises. Keep shining!
+                 </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Flow Like Water – Adapt and keep moving forward, just like a river carving its path through obstacles. </p>
+                <p style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                Believe in Yourself Like Luffy – If you have a dream, chase it with everything you’ve got 
+            </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Learn from Failure Like Deku – Every mistake is a lesson that brings you closer to success.  </p>
+                <p style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); background: rgba(55, 53, 53, 0.4); /* Optional: Add background for readability */">
+                Flow Like Water – Adapt and keep moving forward, just like a river carving its path through obstacles. 
+            </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Grow Like a Tree – Be patient. Strong roots take time to develop, but they make you unshakable. </p>
+                <p style="color: #F5DEB3; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+                Learn from Failure Like Deku – Every mistake is a lesson that brings you closer to success.  
+               </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Stay Determined Like Tanjiro – No matter the hardship, never lose your kindness and resolve.</p>
+                <p style="color: #F5DEB3; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Grow Like a Tree – Be patient. Strong roots take time to develop, but they make you unshakable. </p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Create Your Own Path Like Itachi – Sometimes, the right path isn’t the easiest, but it's worth it. </p>
+                <p style="color: #F5DEB3; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Stay Determined Like Tanjiro – No matter the hardship, never lose your kindness and resolve.</p>
             </div>
             <div class="slide">
-                <p style="color: #F5DEB3;">Shine like the firefly in the dark: Firefles don't compete with city lights - they glow their own way so should you.</p>
+                <p style="color: #F5DEB3;text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Create Your Own Path Like Itachi – Sometimes, the right path isn’t the easiest, but it's worth it. </p>
+            </div>
+            <div class="slide">
+                <p style="color: #F5DEB3; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Shine like the firefly in the dark: Firefles don't compete with city lights - they glow their own way so should you.</p>
             </div>
         </div>
         <button class="next" onclick="nextTip()">&#10095;</button>
@@ -134,6 +159,10 @@ function updateImageCarousel() {
 document.getElementById("challenges-btn").addEventListener("click", function() {
     window.location.href = "challenges.html"; // Redirect to challenges page
 });
+
+function goBack() {
+            window.location.href="self care page.html";
+        }
 
     </script>
 
