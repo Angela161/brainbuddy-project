@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-image: url("images/home.webp");
+    background-image: url("images/brain.png.webp");
     background-size: cover;  /* Enlarges while maintaining aspect ratio */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents tiling */
@@ -18,14 +18,19 @@ body {
     color:#2C3E50;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .hero h1 {
+    
+    font-family:'Times New Roman', Times, serif;
     font-size: 2.5rem;
     margin-bottom: 10px;
+    
 }
 
 .hero p {
+    font-family: 'Times New Roman', Times, serif;
     font-size: 2rem;
     margin-bottom: 20px;
 }
@@ -33,7 +38,7 @@ body {
 .continue-button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #6c5ce7;
+    background:linear-gradient(35deg, #476b90, #703f9e);
     color: white;
     border-radius: 25px;
     text-decoration: none;
@@ -42,9 +47,8 @@ body {
 }
 
 .continue-button:hover {
-    background-color: #4834d4;
+    background-color: #a7a0d3;
 }
-
 
 
 
@@ -58,6 +62,7 @@ body {
 
 .feature-card {
     background: linear-gradient(135deg, #FFD3A5, #FD6585);
+    font-family: 'Times New Roman', Times, serif;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -66,8 +71,8 @@ body {
 }
 
 .feature-card img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 10px;
 }
 
@@ -83,16 +88,19 @@ body {
 .why-brainbuddy h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .why-brainbuddy ul {
     list-style: none;
     padding: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .why-brainbuddy li {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -104,13 +112,19 @@ footer {
     margin-top: 30px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+
+}
+p {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 footer a {
     color: #04284d;
     text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 footer nav {
     margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
 }
