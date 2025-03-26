@@ -6,63 +6,113 @@
     <title>Self Care</title>
     
     <style>
-        body {
-            background-image: url(images/anime.png.webp);
-            font-family: Arial, sans-serif;
-            display: flex;
-            text-align: center;
-            height: 100vh;
-            margin: 0;
-        }
-        
-        h1 {
-            font-size: 6rem ;
-            font-weight: bold;
-            color:#2C3E50;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size:2rem;
-            color:#2C3E50;
-            margin-bottom:20px; 
-        
-    }
-    .button-container {
+       body {
+    background-image: url("images/self\ carebg.png.webp");
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
     display: flex;
-    justify-content: center; /* Center both buttons */
-    gap: 20px; /* Adds space between buttons */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(90, 80, 80, 0.4); /* Optional: Add background for readability */
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #F8F8F8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 2rem;
+    color: #F8F8F8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Space between buttons */
     margin-top: 38px;
+    width: 100%;
 }
 
 .continue-button {
     padding: 12px 24px;
-    background-color: #6c5ce7;
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 2rem;
-    transition: background-color 0.3s ease;
+    font-size: 1.8rem;
+    font-family: 'Times New Roman', Times, serif;
     border: none;
     cursor: pointer;
+    background: linear-gradient(135deg, #bb8449, #c62245);
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.continue-button:hover {
+    background-color: #260149;
+}
+
+.go-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: purple;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.go-back-btn:hover {
+    background: #2575fc;
 }
 
     </style>
 </head>
 <body>
-    <div>
+    <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+
+    <div class="container">
         <h1><b>Self Care</b></h1>
         <p>"Before exploring therapy options, take a moment to go through this self-care page. Prioritizing your well-being through healthy habits and mindfulness can be a great first step toward healing and growth. Small, intentional acts of self-care can help reduce stress, improve emotional resilience, and enhance overall well-being. Whether it’s practicing mindfulness, engaging in physical activities, or simply taking time to rest, investing in yourself is essential. Remember, self-care is not selfish—it’s a necessary step toward a healthier, more balanced life."</p>
-        <button class="continue-button" onclick="proceedToSelfcare()">Self Care Tips</button>
-        <button class="continue-button" onclick="proceedToTherapy()">Therapy Options</button>
+        
+        <div class="button-container">
+            <button class="continue-button" onclick="proceedToSelfcare()">Self Care Tips</button>
+            <button class="continue-button" onclick="proceedToTherapy()">Therapy Options</button>
+        </div>
     </div>
+    
     <script>
         function proceedToSelfcare() {
-            window.location.href="selfcare.html";
+            window.location.href = "selfcare.html";
         }
         function proceedToTherapy() {
-            window.location.href="therapy.html"
+            window.location.href = "therapy.html";
+        }
+        function goBack() {
+            window.location.href = "home.html";
         }
     </script>
+
 
 </body>
 </html>
