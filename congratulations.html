@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url("images/congratulations.png.webp");
+            background-size: cover;  /* Enlarges while maintaining aspect ratio */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */
+            background-attachment: fixed;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            height: 100vh; /* Ensures full viewport height */
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+        }
+        .container {
+            width: 80%; /* Makes it take 80% of the screen width */
+           max-width: 450px; /* Increases the max width */
+           min-height: 300px; /* Sets a minimum height */
+            background:linear-gradient(135deg, #FFD3A5, #FD6585);;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #2C3E50;
+            font-family: 'Times New Roman', Times, serif;  
+        }
+
+        p {
+            font-size: 2rem;
+            color: #2C3E50;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .restart {
+            background: #4CAF50;
+            color: white;
+        }
+        .go-back {
+            background: #ff6f61;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🎉 Congratulations! 🎉</h2>
+        <p>You have successfully completed your 30-day self-love challenge!</p>
+        <button class="restart" onclick="restartChallenge()">🔄 Restart Challenges</button>
+        <button class="go-back" onclick="window.location.href = 'selfcare.html'">⬅️ Go Back</button>
+    </div>
+
+    <script>
+        function restartChallenge() {
+            localStorage.setItem("progress", 0);
+            window.location.href = "challenges.html";
+        }
+    </script>
+
+</body>
+</html>
