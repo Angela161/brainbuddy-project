@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Therapy - BrainBuddy</title>
+    <link rel="stylesheet" href="therapy.css"> <!-- Linking external CSS -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedBackground = localStorage.getItem("therapyBackground");
+            if (savedBackground) {
+                document.body.classList.add(savedBackground);
+                localStorage.removeItem("therapyBackground"); // Remove after applying
+            }
+        });
+    </script>
+
+<style>
+    /* Fallback for background in case JavaScript is disabled */
+    body {
+        background-image: url('images/music\ therapy\ bg.png.webp');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+</style>
+    
+</head>
+<body>
+    
+    <header>
+        <h2>Music Therapy</h2>
+        
+    </header>
+
+    <div class="therapy-content">
+        
+       
+        <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "sound-and-music-therapy.html";
+        }
+    </script>
+
+</body>
+</html>
