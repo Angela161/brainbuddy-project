@@ -3,7 +3,7 @@ body {
     font-family:'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background: url('images/login.png.webp') no-repeat center center fixed;
+    background: url('images/signup.png.webp') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
