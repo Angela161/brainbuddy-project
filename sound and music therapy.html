@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with a Therapist - BrainBuddy</title>
+    <link rel="stylesheet" href="therapy.css">
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    let savedBackground = localStorage.getItem("therapyBackground");
+
+    // Only apply the background if it is set and not the main page
+    if (savedBackground && !window.location.href.includes("therapy.html")) {
+        document.body.classList.add(savedBackground);
+    } else {
+        // Clear background when returning to the main therapy page
+        localStorage.removeItem("therapyBackground");
+    }
+});
+
+function redirectTo(page, bgClass) {
+    localStorage.setItem("therapyBackground", bgClass);
+    window.location.href = page + ".html"; 
+}
+
+    </script>
+    <style>
+        /* Fallback for background in case JavaScript is disabled */
+        body {
+            background-image: url('images/sound\ and\ music\ therapy\ \ bg.png.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+  
+
+<body>
+    <h3>Sound & Music Therapy</h3>
+
+    <div class="therapist-container">
+        <!-- Peer Group & Community Helpline -->
+        <div class="therapist-card sound-therapy" onclick="redirectTo('sound-therapy', 'sound-therapy-bg')">
+            <img src="images/sound.png.webp" alt="Peer Group">
+            <h6>sound therapy</h6>
+        </div>
+
+        <!-- Professional Therapist -->
+        <div class="therapist-card music-therapy" onclick="redirectTo('music-therapy', 'music-bg')">
+            <img src="images/music therapy.png.webp" alt="Professional Therapist">
+            <h6>music therapy</h6>
+        </div>
+    </div>
+
+    <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+    <script>
+        function goBack() {
+            window.location.href="therapy.html";
+        }
+
+    </script>
+
+</body>
+</html>
+
+
