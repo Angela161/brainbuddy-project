@@ -1,10 +1,11 @@
 /* General Styles */
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-image: url(images/therapy.png.webp);
+    background-image: url("images/therapy\ bg.png.webp");
     background-size: cover;  /* Enlarges while maintaining aspect ratio */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents tiling */
+    background-size: 100% 100%;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
@@ -14,6 +15,7 @@ body {
 header {
     color:#123252;
     padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 h4{
     color: #e9ecef;
@@ -25,7 +27,7 @@ h3 {
     font-size: 5rem;
     font-weight:700;
     margin: 0;
-    color: #2C3E50;
+    color: #f8f9fb;
 }
 h2 {
     color:#0a2540;
@@ -85,36 +87,51 @@ h6 {
 
 
 /* Positioning Therapy Options */
-.sound-therapy {
+.sound-and-music-therapy {
     grid-column: 1;
     grid-row: 1;
-    background: linear-gradient(135deg, #D4A5E0, #86A8E7);
+    background: linear-gradient(
+        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(255, 204, 102, 0.6)   /* Warm Gold */
+      );
 
 }
 
 .breathing-meditation {
     grid-column: 3;
     grid-row: 1;
-    background: linear-gradient(135deg, #D4A5E0, #86A8E7);
+    background: linear-gradient(
+        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(255, 204, 102, 0.6)   /* Warm Gold */
+      );
 
 }
 
 .ai-chatbot {
     grid-column: 2;
     grid-row: 2;
-    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    background: linear-gradient(
+        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(255, 204, 102, 0.6)   /* Warm Gold */
+      );
 }
 
 .journaling {
     grid-column: 1;
     grid-row: 3;
-    background: linear-gradient(135deg, #FFD3A5, #FD6585);
+    background: linear-gradient(
+        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(255, 204, 102, 0.6)   /* Warm Gold */
+      );
 }
 
 .therapist {
     grid-column: 3;
     grid-row: 3;
-    background: linear-gradient(135deg, #FAD0C4, #FF9A9E);
+    background: linear-gradient(
+        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(255, 204, 102, 0.6)   /* Warm Gold */
+      );
 }
 
 
@@ -176,7 +193,7 @@ h6 {
 
 
 /* Background Images */
-.sound-therapy-bg {
+.sound-and-music-therapy-bg {
     background-image: url("images/sound therapy bg.png.webp");
 }
 
