@@ -1,10 +1,11 @@
 /* General Styles */
 body {
-    background-image: url("images/brain.png.webp");
+    background-image: url("images/home\ page\ bg.png.webp");
     background-size: cover;  /* Enlarges while maintaining aspect ratio */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents tiling */
     background-attachment: fixed;
+    background-size: 100% 100%;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -16,15 +17,17 @@ body {
 .hero {
     padding: 80px 20px;
     color:#2C3E50;
+    font-weight: 900;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgba(252, 251, 251, 0.7)
 }
 
 .hero h1 {
     
     font-family:'Times New Roman', Times, serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 10px;
     
 }
@@ -33,6 +36,12 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-size: 2rem;
     margin-bottom: 20px;
+}
+.hero h2 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px
+
 }
 
 .continue-button {
@@ -61,7 +70,12 @@ body {
 }
 
 .feature-card {
-    background: linear-gradient(135deg, #FFD3A5, #FD6585);
+    background: linear-gradient(
+  rgba(255, 223, 186, 0.6),  /* Light Gold */
+  rgba(255, 204, 102, 0.6)   /* Warm Gold */
+);
+
+      
     font-family: 'Times New Roman', Times, serif;
     padding: 20px;
     border-radius: 20px;
@@ -106,7 +120,11 @@ body {
 
 /* Footer */
 footer {
-    background:linear-gradient(135deg, #FFD3A5, #FD6585);
+    background: linear-gradient(
+        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(255, 204, 102, 0.6)   /* Warm Gold */
+      );
+      
     color:#2C3E50 ;
     padding: 20px;
     margin-top: 30px;
