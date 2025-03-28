@@ -4,17 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBuddy - Mental Health App</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking external CSS -->
     
     <script>
-        setTimeout(function() {
-            window.location.href = "warning.html"; // First, go to warning page
-        }, 3000); // 3-second delay
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "warning.html"; // Redirect after 5 seconds
+            }, 5000); // 5-second delay
+        };
     </script>
+
+    <style>
+       /* Background Styling */
+body {
+    background-image: url('images/index\ bg.png.webp'); /* Ensure correct path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #2C3E50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
+    
+    
+}
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        text-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Welcome Text Styling */
+.welcome-text {
+    font-size: 4.5vw;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 0;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-out forwards;
+}
+/* Loading Spinner */
+.loader {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+ 
+    </style>
 </head>
 <body>
     <div class="overlay">
-        <h4 class="welcome-text">Welcome to BrainBuddy</h4> <!-- Applied animation class -->
+        <h1 class="welcome-text">Welcome to BrainBuddy</h1> <!-- Applied animation class -->
     </div>
+    <div class="loader"></div>
+
 </body>
 </html>
