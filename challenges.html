@@ -5,89 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self-Love Challenge</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: url("images/challenges\ bg.png.webp");
-            background-size: cover;  /* Enlarges while maintaining aspect ratio */
-            background-position: center; /* Centers the image */
-            background-repeat: no-repeat; /* Prevens tiling */
-            background-attachment: fixed;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            height: 100vh; /* Ensures full viewport height */
-            display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center; /* Centers vertically */
-        }
-        .challenge-container {
-            width: 80%; /* Makes it take 80% of the screen width */
-           max-width: 450px; /* Increases the max width */
-           min-height: 300px; /* Sets a minimum height */
-           background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
-           padding: 20px; /* Increased padding for a larger appearance */
-           border-radius: 20px; /* Softer rounded edges */
-           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-          text-align: center;
-        }
-        #challenge-text {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #2C3E50;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        h2 {
-            font-size: 2rem;
-            color: #2C3E50;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        #complete-btn {
-            background: #ff6f61;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #complete-btn:hover {
-            background: #ff3d2e;
-        }
-        #progress {
-            margin-top: 15px;
-            font-size: 16px;
-        }
+       body {
+    font-family: 'Arial', sans-serif;
+    background: url("images/challenges bg.png.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Instead of height: 100vh */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Allows more space */
+    margin: auto;
+}
+
+
+.challenge-container {
+    max-width: 500px;
+    margin: 30px auto 0; 
+    width: auto;
+    padding: 30px;
+    background: rgba(199, 189, 189, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+h1  {
+    font-size: 2rem;
+    max-width: 600px; /* Prevents text from stretching across the whole page */
+    margin: 10px auto; /* Centers properly */
+    color:#2C3E50;
+}
+
+
+
+
+/* Paragraph styling */
+p {
+    font-size:1.5rem; /* Slightly larger for better readability */
+    font-weight: bold;
+    color:#2C3E50;
+    line-height: 2; /* More spacing for readability */
+    text-align: center; /* Keeps it centered */
+    max-width: 1000px; /* Ensures text stretches properly */
+    margin: 0 auto; /* Ensures it's properly centered */
+}
+
+/* Challenge text */
+#challenge-text {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+/* Button styling */
+#complete-btn {
+    background: #ff6f61;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#complete-btn:hover {
+    background: #ff3d2e;
+}
+
+/* Progress styling */
+#progress {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+/* Back Button Styling */
 .go-back-btn {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
     left: 20px;
-    background: purple; /* Purple gradient */
+    background: purple;
     color: white;
     border: none;
-    padding: 10px 15px;  /* Adjust padding */
-    font-size: 14px;     /* Smaller font size */
-    border-radius: 5px;  /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    width: auto;   /* Prevents it from expanding */
-    min-width: 100px;  /* Ensures a reasonable size */
-    max-width: 200px;  /* Prevents full-width stretching */
-    text-align: center;
-    display: inline-block;  /* Ensures proper button sizing */
+    transition: 0.3s;
 }
 
 .go-back-btn:hover {
-    background: #2575fc; /* Blue gradient */
+    background: #2575fc;
 }
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+    .challenge-container {
+        width: 95%;
+        padding: 20px;
+    }
+    #challenge-text {
+        font-size: 1.3rem;
+    }
+}
+
+
 
     </style>
 </head>
 <body>
     <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+        <h1>CHALLENGES</h1>
+        <p> Taking care of yourself isn’t a luxury—it’s a necessity. These 30 days are a journey toward a stronger, healthier, and more mindful YOU. Each challenge is a step closer to inner peace, resilience, and self-love. ❤️ Stay consistent,  believe in yourself, and celebrate your progress—one day at a time! You’ve got this! Keep going! 🚀
+        </p>
+    
+    
     <div class="challenge-container">
         <h2>🎯 Self-Love Challenge</h2>
         <p id="challenge-text">Loading challenge...</p>
         <button id="complete-btn">✅ Mark as Complete</button>
-        <p id="progress">Progress: <span id="progress-count">0</span>/30 days</p>
+        <p id="progress";>Progress: <span id="progress-count">0</span>/30 days</p>
     </div>
 
     <script>
@@ -180,7 +241,7 @@
         // 🔹 Load Challenge when Page Loads
         document.addEventListener("DOMContentLoaded", loadChallenge);
         function goBack() {
-            window.location.href="selfcare.html";
+            window.location.href="motivational.html";
         }
     </script>
 </body>
