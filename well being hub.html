@@ -7,11 +7,12 @@
     
     <style>
        body {
-    background-image: url("images/self\ carebg.png.webp");
+    background-image: url("images/well\ being\ hub.png.webp");
     background-size: cover;  
     background-position: center; 
     background-repeat: no-repeat; 
     background-attachment: fixed;
+    background-size: 100% 100%;
     font-family: Arial, sans-serif;
     text-align: center;
     height: 100vh;
@@ -24,7 +25,7 @@
 .container {
     max-width: 900px;
     padding: 20px;
-    background: rgba(90, 80, 80, 0.4); /* Optional: Add background for readability */
+    background: rgba(8, 8, 8, 0.4); /* Optional: Add background for readability */
     border-radius: 10px;
 }
 
@@ -92,21 +93,28 @@ p {
     <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
 
     <div class="container">
-        <h1><b>Self Care</b></h1>
-        <p>"Before exploring therapy options, take a moment to go through this self-care page. Prioritizing your well-being through healthy habits and mindfulness can be a great first step toward healing and growth. Small, intentional acts of self-care can help reduce stress, improve emotional resilience, and enhance overall well-being. Whether it’s practicing mindfulness, engaging in physical activities, or simply taking time to rest, investing in yourself is essential. Remember, self-care is not selfish—it’s a necessary step toward a healthier, more balanced life."</p>
+        <h1><b>YOUR WELLNESS HUB</b></h1>
+        <p>Welcome to Your Wellness Hub—your space for self-care, motivation, and growth. Whether you're looking for uplifting quotes, practical self-care tips, or exploring therapy options, we’re here to support your journey. Take a moment to nurture your mind and body—small steps lead to lasting well-being. Choose what resonates with you and start prioritizing yourself today!"
+
+    </p>
         
         <div class="button-container">
-            <button class="continue-button" onclick="proceedToSelfcare()">Self Care Tips</button>
+            <button class="continue-button" onclick="proceedToSelfcare()">motivational quotes</button>
             <button class="continue-button" onclick="proceedToTherapy()">Therapy Options</button>
+            <button class="continue-button" onclick="proceedToTips()">self care tips</button>
         </div>
     </div>
     
     <script>
         function proceedToSelfcare() {
-            window.location.href = "selfcare.html";
+            window.location.href = "motivational.html";
         }
         function proceedToTherapy() {
             window.location.href = "therapy.html";
+        }
+        function proceedToTips() {
+            window.location.href = "tips.html";
+
         }
         function goBack() {
             window.location.href = "home.html";
