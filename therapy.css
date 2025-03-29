@@ -91,7 +91,7 @@ h6 {
     grid-column: 1;
     grid-row: 1;
     background: linear-gradient(
-        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(147, 78, 243, 0.6),
         rgba(255, 204, 102, 0.6)   /* Warm Gold */
       );
 
@@ -101,7 +101,7 @@ h6 {
     grid-column: 3;
     grid-row: 1;
     background: linear-gradient(
-        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(147, 78, 243, 0.6),
         rgba(255, 204, 102, 0.6)   /* Warm Gold */
       );
 
@@ -111,7 +111,7 @@ h6 {
     grid-column: 2;
     grid-row: 2;
     background: linear-gradient(
-        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(67, 231, 64, 0.6),
         rgba(255, 204, 102, 0.6)   /* Warm Gold */
       );
 }
@@ -120,7 +120,7 @@ h6 {
     grid-column: 1;
     grid-row: 3;
     background: linear-gradient(
-        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(197, 61, 61, 0.6), 
         rgba(255, 204, 102, 0.6)   /* Warm Gold */
       );
 }
@@ -129,7 +129,7 @@ h6 {
     grid-column: 3;
     grid-row: 3;
     background: linear-gradient(
-        rgba(255, 223, 186, 0.6),  /* Light Gold */
+        rgba(197, 61, 61, 0.6), 
         rgba(255, 204, 102, 0.6)   /* Warm Gold */
       );
 }
