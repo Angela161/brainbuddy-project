@@ -1,5 +1,5 @@
 body {
-    background: url("images/signup.png.webp");
+    background: url("images/login.png.webp");
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -9,6 +9,7 @@ body {
     height: 100vh;
     font-size: 1.5rem;
     color: #2C3E50;
+    text-shadow: 2px 2px 4px rgb(246, 244, 244)
 }
 
  .signup-container {
