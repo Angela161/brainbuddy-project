@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-image: url("images/home\ page\ bg.png.webp");
+    background-image: url("images/home\ bg.png.webp");
     background-size: cover;  /* Enlarges while maintaining aspect ratio */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents tiling */
