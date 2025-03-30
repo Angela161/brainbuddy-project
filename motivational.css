@@ -95,7 +95,7 @@ P {
 .slide:nth-child(1) { background: url('images/naruto1.png.webp') no-repeat center center/cover; }
 .slide:nth-child(2) { background: url('images/cat1.png.webp') no-repeat center center/cover; }
 .slide:nth-child(3) { background: url('images/grow\ like\ bonsai.png.webp') no-repeat center center/cover; }
-.slide:nth-child(4) { background: url('images/find\ nakama.png..webp') no-repeat center center/cover; }
+.slide:nth-child(4) { background: url('images/nakama.png.webp') no-repeat center center/cover; }
 .slide:nth-child(5) { background: url('images/healing.png.webp') no-repeat center center/cover; }
 .slide:nth-child(6) { background: url('images/CHIRO.PNG.webp') no-repeat center center/cover; }
 .slide:nth-child(7) {background: url("images/mountain.png.webp");}
