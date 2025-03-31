@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journaling Prompts</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url("images/prompts.png.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+    
+        .prompt-container {
+            background: linear-gradient(
+             rgba(246, 160, 210, 0.6),  /* Light Gold */
+            rgba(166, 151, 253, 0.6)   /* Warm Gold */
+             );
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 50px auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    
+        ul {
+            list-style-type: decimal;
+            padding: 0;
+            text-align: left;
+            margin-left: 20px;
+        }
+    
+        li {
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+    
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+        
+       
+</head>
+<body>
+    <div class="prompt-container">
+        <h1 id="category-title">Journaling Prompts</h1>
+        <ul id="prompts-list"></ul>
+        <button onclick="goBack()">Back to Selection</button>
+    </div>
+    
+    <script>
+         // Define prompts for each category
+const promptsData = {
+    "emotional-awareness": [
+        "How am I feeling right now?",
+        "What thoughts are contributing to my emotions?",
+        "What emotions have I been avoiding?",
+        "When was the last time I felt truly at peace?",
+        "What does my body tell me about my emotions?",
+        "What situations trigger strong emotions in me?",
+        "How do I usually express my emotions?",
+        "What helps me process my emotions?",
+        "What emotion do I need to acknowledge today?",
+        "What is one way I can nurture my emotional well-being?"
+    ],
+    "self-discovery": [
+        "What are my top three personal values?",
+        "How have my past experiences shaped me?",
+        "What makes me feel most alive?",
+        "What are my greatest strengths?",
+        "What is something new I want to explore about myself?",
+        "Who am I when no one else is around?",
+        "What kind of person do I aspire to be?",
+        "How do I want to be remembered?",
+        "What are three things I love about myself?",
+        "What limiting beliefs do I want to let go of?"
+    ],
+     "stress-management": [
+        "What are the top three stressors in my life right now?",
+        "How does stress affect my body and mind?",
+        "What are some healthy ways I can cope with stress?",
+        "When was the last time I felt truly relaxed, and what helped?",
+        "What small steps can I take today to reduce my stress levels?",
+        "How do I usually react to stress, and how can I improve my response?",
+        "What activities or hobbies help me unwind and recharge?",
+        "Who or what in my life provides me with emotional support?",
+        "What is one thing I can let go of that is causing me unnecessary stress?",
+        "How can I set better boundaries to protect my peace and well-being?"
+    ],
+    "gratitude": [
+        "What are three things I am grateful for today?",
+        "Who in my life has made a positive impact on me, and why?",
+        "What is a challenge I have faced that turned out to be a blessing in disguise?",
+        "How has nature brought me joy recently?",
+        "What small moments from today made me smile?",
+        "How do I show gratitude to others, and how can I do it more often?",
+        "What is a past experience that I now appreciate more than I did at the time?",
+        "How has my body supported me today, and how can I be grateful for it?",
+        "What’s something I take for granted that I want to appreciate more?",
+        "How can I incorporate more gratitude into my daily routine?"
+    ],
+    "self-compassion": [
+        "How would I speak to a close friend who is struggling? Can I offer myself the same kindness?",
+        "What is one thing I love about myself, and why?",
+        "What mistakes have I made recently, and how can I forgive myself for them?",
+        "How can I be gentler with myself today?",
+        "What are three things I have accomplished that I am proud of?",
+        "How do I usually handle self-criticism, and how can I reframe negative thoughts with compassion?",
+        "What does self-care look like for me, and how can I prioritize it?",
+        "What is one challenge I have overcome that shows my inner strength?",
+        "How can I remind myself that I am enough, just as I am?",
+        "What is one positive affirmation I can tell myself every day?"
+    ],
+     "goal-setting": [
+        "What are three goals I want to achieve in the next six months?",
+        "Why are these goals important to me?",
+        "What small steps can I take today to move closer to my goals?",
+        "What obstacles might I face, and how can I overcome them?",
+        "How will I measure my progress toward each goal?",
+        "Who can support me in achieving my goals, and how can I ask for help?",
+        "What habits do I need to develop to stay on track?",
+        "How will achieving these goals positively impact my life?",
+        "What past achievements prove that I am capable of reaching my goals?",
+        "How can I celebrate my progress along the way?"
+    ],
+      "relationships": [
+        "Who are the most important people in my life, and why?",
+        "How do I express love and appreciation to those I care about?",
+        "What qualities do I value most in a friend or partner?",
+        "How can I improve my communication in my relationships?",
+        "Are there any unresolved conflicts in my relationships? How can I address them?",
+        "How do I set healthy boundaries in my relationships?",
+        "What is one way I can strengthen a meaningful relationship in my life?",
+        "How do I show up for the people I love, and how can I be more present?",
+        "What past relationship experiences have taught me important lessons?",
+        "How can I cultivate more love, trust, and connection in my relationships?"
+    ],
+    "mindfulness": [
+        "What is something I can see, hear, smell, taste, and feel right now?",
+        "How does my body feel in this moment?",
+        "What thoughts are occupying my mind, and can I observe them without judgment?",
+        "What is one small thing I can appreciate about today?",
+        "How can I bring more presence into my daily routine?",
+        "What emotions am I experiencing right now, and how can I acknowledge them with kindness?",
+        "When was the last time I felt fully present and engaged in the moment?",
+        "What activities help me slow down and connect with the present?",
+        "How can I practice self-compassion when my mind feels overwhelmed?",
+        "What is one mindful intention I can set for today?"
+    ]
+};
+
+// Function to get query parameter
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Function to load prompts based on category
+function loadPrompts() {
+    const category = getQueryParam("category");
+    const promptsList = document.getElementById("prompts-list");
+    const categoryTitle = document.getElementById("category-title");
+
+    if (category && promptsData[category]) {
+        categoryTitle.textContent = category.replace("-", " ").toUpperCase();
+        promptsList.innerHTML = promptsData[category].map(prompt => `<li>${prompt}</li>`).join("");
+    } else {
+        categoryTitle.textContent = "Category Not Found";
+        promptsList.innerHTML = "<li>No prompts available.</li>";
+    }
+}
+
+// Function to go back to selection page
+function goBack() {
+    window.location.href = "journaling.html";
+}
+
+// Load prompts when page is loaded
+window.onload = loadPrompts;
+
+
+    </script>
+</body>
+</html>
