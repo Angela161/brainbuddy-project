@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guided Journaling - BrainBuddy</title>
-    <link rel="stylesheet" href="therapy.css">
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let savedBackground = localStorage.getItem("therapyBackground");
-            if (savedBackground) {
-                document.body.classList.add(savedBackground);
-                localStorage.removeItem("therapyBackground");
-            }
-        });
-    </script>
     <style>
         /* Fallback for background in case JavaScript is disabled */
         body {
@@ -22,25 +11,116 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
         }
+        header {
+            text-align: center;
+            margin-top: 10px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.8rem;
+        }
+        .container {
+            text-align: center;
+            background: linear-gradient(
+            rgba(255, 223, 186, 0.6),  /* Light Gold */
+           rgba(255, 204, 102, 0.6)   /* Warm Gold */
+             );
+
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+            width: 80%;  /* Increase width to 80% of the viewport */
+            max-width: 650px; 
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size:1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(
+             rgba(222, 124, 181, 0.6),  /* Light Gold */
+            rgba(104, 82, 233, 0.6)   /* Warm Gold */
+             );
+             color:#2c3e50;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .go-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background:linear-gradient(135deg, #6a207c, #1053ce); /* Purple gradient */
+    color: white;
+    border: none;
+    padding: 10px 15px;  /* Adjust padding */
+    font-size: 14px;     /* Smaller font size */
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    width: auto;   /* Prevents it from expanding */
+    min-width: 100px;  /* Ensures a reasonable size */
+    max-width: 200px;  /* Prevents full-width stretching */
+    text-align: center;
+    display: inline-block;  /* Ensures proper button sizing */
+}
+
+.go-back-btn:hover {
+    background: #2575fc; /* Blue gradient */
+}
+
     </style>
 </head>
 <body>
-
     <header>
         <h2>Guided Journaling</h2>
-        
     </header>
-
     <div class="therapy-content">
         <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
     </div>
-
+    <div class="container">
+        <h1>Select a Journaling Area</h1>
+        <div class="categories">
+            <button onclick="selectCategory('emotional-awareness')">Emotional Awareness</button>
+            <button onclick="selectCategory('self-discovery')">Self-Discovery</button>
+            <button onclick="selectCategory('stress-management')">Stress & Anxiety</button>
+            <button onclick="selectCategory('gratitude')">Gratitude</button>
+            <button onclick="selectCategory('self-compassion')">Self-Compassion</button>
+            <button onclick="selectCategory('goal-setting')">Goal-Setting</button>
+            <button onclick="selectCategory('relationships')">Relationships</button>
+            <button onclick="selectCategory('mindfulness')">Mindfulness</button>
+        </div>
+    </div>
+    <script>
+        function selectCategory(category) {
+            window.location.href = `prompts.html?category=${category}`;
+        }
+    </script>
     <script>
         function goBack() {
             window.location.href = "therapy.html";
         }
     </script>
-
 </body>
 </html>
